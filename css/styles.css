@@ -1,11 +1,13 @@
 :root {
   --main-bg-color: #ffffff;
+  --bg-hero-color: #c4c4c4;
   --border-bg-color: #2f303a;
   --section-team-bg-color: #f5f4fa;
   --main-text-color: #757575;
   --secondary-text-color: #212121;
   --accent-color: #2196f3;
   --secondary-accent-color: #188ce8;
+  --benefits-box-color: #f5f4fa;
   --filter-btn-bg-color: #f5f4fa;
   --logo-part-color: #000000;
   --hero-title-color: #ffffff;
@@ -17,8 +19,14 @@
   --border-header-color: #ececec;
   --border-project-color: #eeeeee;
   --soc-network-color: #afb1b8;
+  --border-clients-color: #afb1b8;
   --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --filter-btn-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  --projects-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  --bg-hero-overlay: rgba(47, 48, 58, 0.4);
 }
 
 body {
@@ -181,9 +189,18 @@ img {
 /* секція герой */
 
 .hero {
-  background-color: var(--border-bg-color);
-
+  max-width: 1600px;
+  height: 600px;
   padding: 200px 0;
+  margin: 0 auto;
+  background-color: var(--bg-hero-color);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .title-hero {
@@ -230,6 +247,17 @@ img {
 
 .benefit-item {
   flex-basis: calc((100% - 90px) / 4);
+}
+
+.benefits-icons-box {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: var(--benefits-box-color);
+  border-radius: 4px;
 }
 
 .benefit-title {
@@ -350,6 +378,47 @@ img {
   color: #ffffff;
 }
 
+/* секція клієнти */
+
+.clients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+}
+
+.client-item {
+  flex-basis: calc((100% - 150px) / 6);
+}
+
+/* flex-basis: calc((100% - кол-во маржинов в строке * значение маржина) / кол-во элементов в строке); */
+
+.client-link {
+  display: flex;
+  border: 1px solid var(--border-clients-color);
+  border-radius: 4px;
+  padding: 16px 32px;
+  color: var(--soc-network-color);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+.client-link:hover,
+.client-link:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
 /* MAIN CONTENT "PORTFOLIO" */
 
 /* фільтр-кнопки */
@@ -364,7 +433,6 @@ img {
 }
 
 .filter-btn {
-  min-width: 73px;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -382,6 +450,7 @@ img {
 .filter-btn.current {
   color: var(--btn-text-color);
   background: var(--accent-color);
+  box-shadow: var(--filter-btn-shadow);
 }
 
 /* проєкти */
@@ -394,6 +463,15 @@ img {
 
 .card-set > .item {
   width: calc((100% - 60px) / 3);
+}
+
+.project-link {
+  display: block;
+}
+
+.project-link:hover,
+.project-link:focus {
+  box-shadow: var(--projects-card-shadow);
 }
 
 .card-content {
