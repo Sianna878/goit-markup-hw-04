@@ -13,12 +13,14 @@
   --hero-title-color: #ffffff;
   --btn-text-color: #ffffff;
   --logo-footer-color: #ffffff;
-  --location-color: #ffffff;
+  --footer-text-color: #ffffff;
   --contact-footer-color: rgba(255, 255, 255, 0.6);
   --bg-footer-icons: rgba(255, 255, 255, 0.1);
   --border-header-color: #ececec;
   --border-project-color: #eeeeee;
   --soc-network-color: #afb1b8;
+  --secondary-social-color: #ffffff;
+  --bg-social-color: #ffffff;
   --border-clients-color: #afb1b8;
   --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -26,7 +28,6 @@
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --projects-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-  --bg-hero-overlay: rgba(47, 48, 58, 0.4);
 }
 
 body {
@@ -362,7 +363,7 @@ img {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--bg-social-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -375,7 +376,7 @@ img {
 .soc-network-link:hover,
 .soc-network-link:focus {
   background-color: var(--accent-color);
-  color: #ffffff;
+  color: var(--secondary-social-color);
 }
 
 /* секція клієнти */
@@ -399,7 +400,7 @@ img {
   flex-basis: calc((100% - 150px) / 6);
 }
 
-/* flex-basis: calc((100% - кол-во маржинов в строке * значение маржина) / кол-во элементов в строке); */
+/* flex-basis: calc((100% - кіл-ть маржинів в рядку * значення маржина) / кіл-ть елементів в рядку); */
 
 .client-link {
   display: flex;
@@ -536,7 +537,7 @@ img {
 }
 
 .map-location {
-  color: var(--location-color);
+  color: var(--footer-text-color);
 }
 
 .link-contact:hover,
@@ -546,8 +547,6 @@ img {
 
 /* соціальні мережі */
 
-.footer-social-network {
-}
 .join {
   display: block;
   margin-bottom: 20px;
@@ -557,16 +556,19 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
-  color: #ffffff;
+  color: var(--footer-text-color);
 }
+
 .social-network-list {
   display: flex;
   gap: 10px;
 }
+
 .social-network-item {
   width: 44px;
   height: 44px;
 }
+
 .social-network-link {
   display: flex;
   width: 100%;
@@ -575,8 +577,9 @@ img {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: var(--secondary-social-color);
 }
+
 .footer-icon {
   fill: currentColor;
 }
