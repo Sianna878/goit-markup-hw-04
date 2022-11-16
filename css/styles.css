@@ -399,13 +399,16 @@ img {
 
 .client-item {
   flex-basis: calc((100% - 150px) / 6);
+  width: 170px;
+  height: 92px;
 }
 
 /* flex-basis: calc((100% - кіл-ть маржинів в рядку * значення маржина) / кіл-ть елементів в рядку); */
 
 .client-link {
   display: flex;
-  height: 92px;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--border-clients-color);
